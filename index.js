@@ -30,7 +30,7 @@ app.post('/submitform', (req , res) =>{
     }
     console.log("Record inserted successfully")
   })
-  return res.redirect('index.html')
+  return res.redirect('main.html')
 })
  
 app.get('/', function(req, res){
@@ -38,7 +38,7 @@ app.get('/', function(req, res){
   res.set({
     "Allow-access-Allow-Origin":'*'
   })
-  return res.redirect('index.html')
+  return res.redirect('main.html')
 });
 
 app.post('/regform', (req , res) =>{
@@ -58,7 +58,8 @@ db.collection('UserReg').insertOne(data,(err,collecton) =>{
   }
   console.log("Record inserted successfully")
 })
-return res.redirect('index.html')
+
+return res.redirect('main.html')
 })
 
 app.get('/', function(req, res){
@@ -66,9 +67,8 @@ app.get('/', function(req, res){
 res.set({
   "Allow-access-Allow-Origin":'*'
 })
-return res.redirect('index.html')
+return res.redirect('main.html')
 });
-
 
 
 app.listen(5500);
